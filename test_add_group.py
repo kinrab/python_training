@@ -3,7 +3,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 import unittest
 import time
-
+from group import Group
 
 class UntitledTestCase(unittest.TestCase):
 
@@ -12,37 +12,57 @@ class UntitledTestCase(unittest.TestCase):
         self.driver = WebDriver()
         self.driver.implicitly_wait(30)
     
-    def test_untitled_test_case(self):
+    def test_add_new_group(self):
 
         driver = self.driver
 
         self.Open_Home_Page(driver)
-
         time.sleep(3)
 
-        self.Login_process(driver)
-
+        self.Login_process(driver, username = "admin", password = "secret")
         time.sleep(3)
 
         self.Show_Groups_List(driver)
-
         time.sleep(3)
 
-        self.Add_New_Group(driver)
+        self.Add_New_Group(driver, Group( group_name = "Test_group", group_header = "test_group_header", group_footer = "test_group_footer"))
+        time.sleep(3)
 
         self.Show_Groups_List(driver)
-
         time.sleep(3)
 
         self.Logout_process(driver)
-
         time.sleep(3)
+
+    def test_add_new_empty_group(self):
+
+        driver = self.driver
+
+        self.Open_Home_Page(driver)
+        time.sleep(3)
+
+        self.Login_process(driver, username = "admin", password = "secret")
+        time.sleep(3)
+
+        self.Show_Groups_List(driver)
+        time.sleep(3)
+
+        self.Add_New_Group(driver, Group( group_name = "", group_header = "", group_footer = ""))
+        time.sleep(3)
+
+        self.Show_Groups_List(driver)
+        time.sleep(3)
+
+        self.Logout_process(driver)
+        time.sleep(3)
+
+
 
     def Logout_process(self, driver):
 
         driver.find_element(By.LINK_TEXT, "Logout").click()
 
-    def Add_New_Group(self, driver):
+    def Add_New_Group(self, driver, group):
 
         driver.find_element(By.NAME, "new").click()
 
@@ -50,19 +70,19 @@ class UntitledTestCase(unittest.TestCase):
 
         driver.find_element(By.NAME, "group_name").click()
         driver.find_element(By.NAME, "group_name").clear()
-        driver.find_element(By.NAME, "group_name").send_keys("Test_group")
+        driver.find_element(By.NAME, "group_name").send_keys(group.group_name)
 
         time.sleep(3)
 
         driver.find_element(By.NAME, "group_header").click()
         driver.find_element(By.NAME, "group_header").clear()
-        driver.find_element(By.NAME, "group_header").send_keys("test_group_header")
+        driver.find_element(By.NAME, "group_header").send_keys(group.group_header)
 
         time.sleep(3)
 
         driver.find_element(By.NAME, "group_footer").click()
         driver.find_element(By.NAME, "group_footer").clear()
-        driver.find_element(By.NAME, "group_footer").send_keys("test_group_footer")
+        driver.find_element(By.NAME, "group_footer").send_keys(group.group_footer)
 
         time.sleep(3)
 
@@ -72,17 +92,17 @@ class UntitledTestCase(unittest.TestCase):
 
         driver.find_element(By.LINK_TEXT, "groups").click()
 
-    def Login_process(self, driver):
+    def Login_process(self, driver, username, password):
 
         # Ввод в поле логина admin
         driver.find_element(By.NAME, "user").click()
         driver.find_element(By.NAME, "user").clear()
-        driver.find_element(By.NAME, "user").send_keys("admin")
+        driver.find_element(By.NAME, "user").send_keys(username)
 
         # Ввод в поле пароля secret
         driver.find_element(By.NAME, "pass").click()
         driver.find_element(By.NAME, "pass").clear()
-        driver.find_element(By.NAME, "pass").send_keys("secret")
+        driver.find_element(By.NAME, "pass").send_keys(password)
 
         time.sleep(3)
 
