@@ -1,2 +1,2 @@
 # python_training
-Тестовый репозиторий для тренинга по изучению Питона
+Test repository for python training
