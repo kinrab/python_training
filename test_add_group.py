@@ -25,7 +25,7 @@ class UntitledTestCase(unittest.TestCase):
         time.sleep(3)
 
         # Устанавливаем размеры окна приложения - надо ли оно?
-        self.driver.set_window_size(1920, 1200)
+        #self.driver.set_window_size(1920, 1200)
 
         # Логинимся с параметрами Login = admin Password = secret
         self.Login_process(driver, username = "admin", password = "secret")
@@ -38,7 +38,7 @@ class UntitledTestCase(unittest.TestCase):
                                              last_name = "Иванович",
                                              nick_name= "Ванька",
                                              contact_title =  "ИИИ",
-                                             company_name= "ООО_Рога_и_Копыта",
+                                             company_name= "ООО_Рога_и_Копыта",                        # Если вводить с пробелами то SQL запрос внутри приложения дает ошибку и не сохраняет данные (всегда или иногда!)
                                              contact_address = "Проспект Ленина, дом 15, кв 7",
                                              home_phone =  "+7 821 000-00-00",
                                              mobile_phone = "+7 921 000-00-00",
@@ -241,8 +241,8 @@ class UntitledTestCase(unittest.TestCase):
         time.sleep(5)
 
         # Нажимаем на кнопу "Enter":
-        driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
-        #driver.find_element(By.NAME, "submit").submit()                                    # - вроде так проще и понятнее должно быть чем CSS selector?
+        #driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
+        driver.find_element(By.NAME, "submit").click()                                    # - вроде так проще и понятнее должно быть чем CSS selector?
 
         print("STEP 26 - END OF TEST\n")
 
