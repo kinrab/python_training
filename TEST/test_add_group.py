@@ -21,7 +21,7 @@ def test_add_new_contact(app):
     # Открываем окно приложения: внутри метода логина
     # Логинимся с параметрами Login = admin Password = secret
 
-    app.Login_process( username = "admin", password = "secret")
+    app.session.Login_process( username = "admin", password = "secret")
 
     time.sleep(3)
 
@@ -50,32 +50,32 @@ def test_add_new_contact(app):
                                          second_home = "http://www.leningrad.spb.ru",
                                          second_notes = "Просто какой-то комментарий" )
 
-    app.add_new_contact(user_contact)
+    app.Add_new_contact(user_contact)
 
-    app.Logout_process()
+    app.session.Logout_process()
 
     time.sleep(3)
 
 
 def test_add_new_group(app):
 
-    app.Login_process(username = "admin", password = "secret")
+    app.session.Login_process(username = "admin", password = "secret")
     time.sleep(3)
 
     app.Add_New_Group(Group( group_name = "Test_group", group_header = "test_group_header", group_footer = "test_group_footer"))
     time.sleep(3)
 
-    app.Logout_process()
+    app.session.Logout_process()
     time.sleep(3)
 
 def test_add_new_empty_group(app):
 
-    app.Login_process(username = "admin", password = "secret")
+    app.session.Login_process(username = "admin", password = "secret")
     time.sleep(3)
 
     app.Add_New_Group(Group( group_name = "", group_header = "", group_footer = ""))
     time.sleep(3)
 
-    app.Logout_process()
+    app.session.Logout_process()
     time.sleep(3)
 

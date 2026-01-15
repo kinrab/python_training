@@ -1,6 +1,7 @@
 
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.by import By
+from FIXTURE.session import SessionHelper
 import time
 
 class Application:
@@ -9,8 +10,9 @@ class Application:
 
         self.driver = WebDriver()
         self.driver.implicitly_wait(30)
+        self.session = SessionHelper(self)
 
-    def add_new_contact(self, new_contact):
+    def Add_new_contact(self, new_contact):
 
         driver = self.driver
 
@@ -196,10 +198,7 @@ class Application:
         time.sleep(10)
 
 
-    def Logout_process(self):
 
-        driver = self.driver
-        driver.find_element(By.LINK_TEXT, "Logout").click()
 
     def Add_New_Group(self, group):
 
@@ -241,27 +240,7 @@ class Application:
 
         driver.find_element(By.LINK_TEXT, "groups").click()
 
-    def Login_process(self, username, password):
 
-        driver = self.driver
-
-        self.Open_Home_Page()
-        time.sleep(3)
-
-        # Ввод в поле логина admin
-        driver.find_element(By.NAME, "user").click()
-        driver.find_element(By.NAME, "user").clear()
-        driver.find_element(By.NAME, "user").send_keys(username)
-
-        # Ввод в поле пароля secret
-        driver.find_element(By.NAME, "pass").click()
-        driver.find_element(By.NAME, "pass").clear()
-        driver.find_element(By.NAME, "pass").send_keys(password)
-
-        time.sleep(3)
-
-        # Нажать на кнопку Login
-        driver.find_element(By.XPATH, "//input[@value='Login']").click()
 
     def Open_Home_Page(self):
 
