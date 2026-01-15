@@ -21,25 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIXTURE/application.py">
+      <file leaf-file-name="group.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIXTURE/group.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
-                <element signature="e#1#59#0" expanded="true" />
+                <element signature="e#1#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="session.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIXTURE/session.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36885247">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
               <folding>
                 <element signature="e#1#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIXTURE/contact.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,10 +61,21 @@
         <entry file="file://$PROJECT_DIR$/TEST/test_add_group.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
               <folding>
-                <element signature="e#24#35#0" expanded="true" />
-                <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+                <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FIXTURE/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44262296">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="e#1#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,9 +100,11 @@
         <option value="$PROJECT_DIR$/group.py" />
         <option value="$PROJECT_DIR$/application.py" />
         <option value="$PROJECT_DIR$/test_add_group.py" />
-        <option value="$PROJECT_DIR$/FIXTURE/application.py" />
+        <option value="$PROJECT_DIR$/FIXTURE/group.py" />
         <option value="$PROJECT_DIR$/TEST/test_add_group.py" />
+        <option value="$PROJECT_DIR$/FIXTURE/contact.py" />
         <option value="$PROJECT_DIR$/FIXTURE/session.py" />
+        <option value="$PROJECT_DIR$/FIXTURE/application.py" />
       </list>
     </option>
   </component>
@@ -439,8 +464,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -458,8 +482,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -477,8 +500,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -496,8 +518,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -507,8 +528,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -525,8 +545,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -547,12 +566,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIXTURE/application.py">
+    <entry file="file://$PROJECT_DIR$/FIXTURE/contact.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
           <folding>
-            <element signature="e#1#59#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIXTURE/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIXTURE/group.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -560,20 +599,19 @@
     <entry file="file://$PROJECT_DIR$/TEST/test_add_group.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <marker date="1768492800772" expanded="true" signature="2600:2920" placeholder="..." />
+            <marker date="1768495892840" expanded="true" signature="2608:2934" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIXTURE/session.py">
+    <entry file="file://$PROJECT_DIR$/FIXTURE/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36885247">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.44262296">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding>
-            <element signature="e#1#44#0" expanded="true" />
+            <element signature="e#1#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

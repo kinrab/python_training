@@ -8,12 +8,17 @@ class SessionHelper:
 
         self.app = app
 
+    def Open_Home_Page(self):
+
+        driver = self.app.driver
+
+        driver.get("http://localhost:8080/addressbook/")
 
     def Login_process(self, username, password):
 
         driver = self.app.driver
 
-        self.app.Open_Home_Page()
+        self.Open_Home_Page()
         time.sleep(3)
 
         # Ввод в поле логина admin

@@ -50,7 +50,7 @@ def test_add_new_contact(app):
                                          second_home = "http://www.leningrad.spb.ru",
                                          second_notes = "Просто какой-то комментарий" )
 
-    app.Add_new_contact(user_contact)
+    app.contact.Add_new_contact(user_contact)
 
     app.session.Logout_process()
 
@@ -62,7 +62,7 @@ def test_add_new_group(app):
     app.session.Login_process(username = "admin", password = "secret")
     time.sleep(3)
 
-    app.Add_New_Group(Group( group_name = "Test_group", group_header = "test_group_header", group_footer = "test_group_footer"))
+    app.group.Add_New_Group(Group( group_name = "Test_group", group_header = "test_group_header", group_footer = "test_group_footer"))
     time.sleep(3)
 
     app.session.Logout_process()
@@ -73,7 +73,7 @@ def test_add_new_empty_group(app):
     app.session.Login_process(username = "admin", password = "secret")
     time.sleep(3)
 
-    app.Add_New_Group(Group( group_name = "", group_header = "", group_footer = ""))
+    app.group.Add_New_Group(Group( group_name = "", group_header = "", group_footer = ""))
     time.sleep(3)
 
     app.session.Logout_process()
