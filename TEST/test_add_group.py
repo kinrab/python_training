@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-import pytest
 import time
-from group import Group
-from contact import Contact
-from application import Application
+
+import pytest
+from FIXTURE.application import Application
+from MODEL.contact import Contact
+from MODEL.group import Group
+
 
 @pytest.fixture
 def app(request):
