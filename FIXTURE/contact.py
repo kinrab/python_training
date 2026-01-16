@@ -192,9 +192,21 @@ class ContactHelper:
         #print("STEP 26 - END OF TEST\n")
         #time.sleep(1)
 
+    def Show_Contact_List(self):
+
+        driver = self.app.driver
+
+        # Нажать на кнопку Home что по факту откроет список контактов:
+        driver.find_element(By.XPATH, "//a[contains(text(),'home')]").click()
+        time.sleep(3)
+
     def Delete_First_Contact(self):
 
         driver = self.app.driver
+
+        # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
+        self.app.contact.Show_Contact_List()
+        time.sleep(3)
 
         # Выбираем первый контакт в списке - Check box activate
         driver.find_element(By.NAME, "selected[]").click()
@@ -216,6 +228,10 @@ class ContactHelper:
     def Edit_First_Contact(self):
 
         driver = self.app.driver
+
+        # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
+        self.app.contact.Show_Contact_List()
+        time.sleep(3)
 
         # Нажимаем кнопку Edit у первого контакта  xpath = //img[@alt='Edit']
         driver.find_element(By.XPATH, "//img[@alt='Edit']").click()

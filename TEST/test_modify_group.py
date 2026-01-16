@@ -1,27 +1,27 @@
-# -*- coding: utf-8 -*-
+
 from MODEL.group import Group
 import time
 
 
-def test_add_new_group(app):
+def test_modify_group_name(app):
 
     # app.session.Login_process(username = "admin", password = "secret")
     # time.sleep(3)
 
-    app.group.Add_New_Group(Group( group_name = "Test_group", group_header = "test_group_header", group_footer = "test_group_footer"))
+    app.group.Modify_First_Group(Group(group_name = "XXL group name"))
     time.sleep(3)
 
     # app.session.Logout_process()
     # time.sleep(3)
 
-def test_add_new_empty_group(app):
+
+def test_modify_group_header(app):
 
     # app.session.Login_process(username = "admin", password = "secret")
     # time.sleep(3)
 
-    app.group.Add_New_Group(Group( group_name = "", group_header = "", group_footer = ""))
+    app.group.Modify_First_Group(Group(group_header = "XXL group header"))
     time.sleep(3)
 
     # app.session.Logout_process()
     # time.sleep(3)
-

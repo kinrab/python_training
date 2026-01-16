@@ -20,21 +20,7 @@ class GroupHelper:
 
         time.sleep(3)
 
-        driver.find_element(By.NAME, "group_name").click()
-        driver.find_element(By.NAME, "group_name").clear()
-        driver.find_element(By.NAME, "group_name").send_keys(group.group_name)
-
-        time.sleep(3)
-
-        driver.find_element(By.NAME, "group_header").click()
-        driver.find_element(By.NAME, "group_header").clear()
-        driver.find_element(By.NAME, "group_header").send_keys(group.group_header)
-
-        time.sleep(3)
-
-        driver.find_element(By.NAME, "group_footer").click()
-        driver.find_element(By.NAME, "group_footer").clear()
-        driver.find_element(By.NAME, "group_footer").send_keys(group.group_footer)
+        self.Fill_Group_Form(group)
 
         time.sleep(3)
 
@@ -43,11 +29,32 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
+    def Change_Field_Value(self, text, group_item):
+
+        driver = self.app.driver
+
+        if text is not None:
+
+            driver.find_element(By.NAME, group_item).click()
+            driver.find_element(By.NAME, group_item).clear()
+            driver.find_element(By.NAME, group_item).send_keys(text)
+            time.sleep(3)
+
+    def Fill_Group_Form(self, group):
+
+        self.Change_Field_Value(group.group_name, "group_name")
+
+        self.Change_Field_Value(group.group_header, "group_header")
+
+        self.Change_Field_Value(group.group_footer, "group_footer")
+
+
     def Show_Groups_List(self):
 
         driver = self.app.driver
 
         driver.find_element(By.LINK_TEXT, "groups").click()
+
 
     def Delete_First_Group (self):
 
@@ -56,8 +63,7 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
-        # Выбрать первый по списку чек-бокс
-        driver.find_element(By.NAME, "selected[]").click()
+        self.Select_First_Group()
 
         # Нажать на кнопку Delete
         driver.find_element(By.NAME, "delete").click()
@@ -66,6 +72,7 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
+
     def Edit_First_Group(self):
 
         driver = self.app.driver
@@ -73,8 +80,7 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
-        # Выбрать первую в списке групу - check box activate
-        driver.find_element(By.NAME, "selected[]").click()
+        self.Select_First_Group()
 
         # Нажать кнопку Edit
         driver.find_element(By.NAME, "edit").click()
@@ -105,3 +111,33 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
+
+    def Modify_First_Group(self, new_group_data):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+        self.Select_First_Group()
+
+        # Open modification form
+        driver.find_element(By.NAME, "edit").click()
+
+        # Fill the form
+        self.Fill_Group_Form(new_group_data)
+
+        # Submit midification
+        driver.find_element(By.NAME, "update").click()
+
+        # Вернуться к списку групп
+        self.Show_Groups_List()
+        time.sleep(3)
+
+    def Select_First_Group(self):
+
+        driver = self.app.driver
+
+        # Выбрать первый по списку чек-бокс
+
+        driver.find_element(By.NAME, "selected[]").click()
