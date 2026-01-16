@@ -53,6 +53,9 @@ class GroupHelper:
 
         driver = self.app.driver
 
+        if driver.current_url.endswith("/group.php") and len (  driver.find_elements(By.NAME, "new") ) >0:
+            return
+
         driver.find_element(By.LINK_TEXT, "groups").click()
 
 
@@ -138,18 +141,19 @@ class GroupHelper:
 
         driver = self.app.driver
 
+        self.Show_Groups_List()
+
         # Выбрать первый по списку чек-бокс
 
         driver.find_element(By.NAME, "selected[]").click()
 
     def count(self):
 
-         driver = self.app.driver
+        driver = self.app.driver
 
-         self.Show_Groups_List()
+        self.Show_Groups_List()
 
-         count =  len( driver.find_elements(By.NAME, "selected[]") )
+        count =  len( driver.find_elements(By.NAME, "selected[]") )
 
-         return count
+        return count
 
-    

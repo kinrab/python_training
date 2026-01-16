@@ -9,7 +9,7 @@ class Application:
     def __init__(self):
 
         self.driver = WebDriver()
-        self.driver.implicitly_wait(5)
+        #self.driver.implicitly_wait(5) Для учебного приложения это не нужно  - все элементы сразу на странице при открытии получаются...
 
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
