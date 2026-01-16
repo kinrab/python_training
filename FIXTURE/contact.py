@@ -183,11 +183,65 @@ class ContactHelper:
         driver.find_element(By.NAME, "notes").send_keys(new_contact.second_notes)
         #print("STEP 25\n")
 
-        time.sleep(5)
+        time.sleep(3)
 
         # Нажимаем на кнопу "Enter":
         #driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()            # исходный код клика по кнопке Enter полученный рекордером Selenium IDE / Katalon
         driver.find_element(By.NAME, "submit").click()                                              # - вроде так проще и понятнее должно быть чем CSS selector?
 
         #print("STEP 26 - END OF TEST\n")
-        time.sleep(10)
+        #time.sleep(1)
+
+    def Delete_First_Contact(self):
+
+        driver = self.app.driver
+
+        # Выбираем первый контакт в списке - Check box activate
+        driver.find_element(By.NAME, "selected[]").click()
+
+        # Нажимаем кнопку Delete
+        driver.find_element(By.XPATH, "//input[@value='Delete']").click()
+        time.sleep(3)
+
+        # Подтверждаем удаление во всплывающем окне
+
+        assert driver.switch_to.alert.text == "Delete 1 addresses?"
+
+        alert = driver.switch_to.alert
+
+        alert.accept()
+
+        time.sleep(3)  # Далее приложение автоматически откроет список оствашихся контактов
+
+    def Edit_First_Contact(self):
+
+        driver = self.app.driver
+
+        # Нажимаем кнопку Edit у первого контакта  xpath = //img[@alt='Edit']
+        driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
+        time.sleep(3)
+
+        # Изменяем firstname поле новым значением
+        item = driver.find_element(By.NAME, "firstname")
+        val = item.get_attribute("value")
+
+        print(" Исходное значение: {  "+ val + " }")
+
+        val = val + "(*)"
+
+        print("Новое значение: {  "+ val + " }")
+
+        driver.find_element(By.NAME, "firstname").click()
+        driver.find_element(By.NAME, "firstname").clear()
+        driver.find_element(By.NAME, "firstname").send_keys(val)
+
+        time.sleep(3)
+
+        # Жмем кнопку Update
+        driver.find_element(By.XPATH, "//input[@value='Update']").click()
+        time.sleep(3)
+
+        # Через 2 секунды автоматически открывается страница контактов
+
+
+

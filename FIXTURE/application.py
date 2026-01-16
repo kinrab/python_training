@@ -10,6 +10,7 @@ class Application:
 
         self.driver = WebDriver()
         self.driver.implicitly_wait(30)
+
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)

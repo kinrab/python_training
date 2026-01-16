@@ -48,3 +48,60 @@ class GroupHelper:
         driver = self.app.driver
 
         driver.find_element(By.LINK_TEXT, "groups").click()
+
+    def Delete_First_Group (self):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+        # Выбрать первый по списку чек-бокс
+        driver.find_element(By.NAME, "selected[]").click()
+
+        # Нажать на кнопку Delete
+        driver.find_element(By.NAME, "delete").click()
+        time.sleep(3)
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+    def Edit_First_Group(self):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+        # Выбрать первую в списке групу - check box activate
+        driver.find_element(By.NAME, "selected[]").click()
+
+        # Нажать кнопку Edit
+        driver.find_element(By.NAME, "edit").click()
+
+        # В открывшемся окне добавить в название группы какой-то символ
+        item = driver.find_element(By.NAME, "group_name")
+        val = item.get_attribute("value")
+
+        print(" Исходное значение: {  "+ val + " }")
+
+        val = val + "(*)"
+
+        print("Новое значение: {  "+ val + " }")
+
+        driver.find_element(By.NAME, "group_name").click()
+        driver.find_element(By.NAME, "group_name").clear()
+        driver.find_element(By.NAME, "group_name").send_keys(val)
+
+        time.sleep(3)
+
+        # Нажать на кнопку Update
+        driver.find_element(By.NAME, "update").click()
+
+        time.sleep(3)
+
+        # Открыть список групп
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
