@@ -14,11 +14,16 @@ def app(request):
 
     if fixture is None:
         fixture = Application()
-        fixture.session.Login_process(username = "admin", password = "secret")
     else:
-           if  not fixture.is_valid():
-               fixture = Application()
-               fixture.session.Login_process(username = "admin", password = "secret")
+        if  not fixture.is_valid():
+            fixture = Application()
+
+    print("Start fixture login:\n")
+
+    fixture.session.Ensure_Login_process(username = "admin", password = "secret")
+
+    print("End fixture login.\n")
+
     return fixture
 
 
@@ -26,9 +31,7 @@ def app(request):
 
 def stop(request):
     def fin():
-         time.sleep(3)
-         fixture.session.Logout_process()
-         time.sleep(3)
+         fixture.session.Ensure_Logout_process()
          fixture.Destroy()
 
     request.addfinalizer(fin)

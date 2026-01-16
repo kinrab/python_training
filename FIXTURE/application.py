@@ -9,7 +9,7 @@ class Application:
     def __init__(self):
 
         self.driver = WebDriver()
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(5)
 
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
@@ -18,7 +18,7 @@ class Application:
     def is_valid(self):
 
         try:
-              self.wd.current_url
+              self.driver.current_url
               return True
         except:
               return False
