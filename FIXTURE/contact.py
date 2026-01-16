@@ -259,5 +259,16 @@ class ContactHelper:
 
         # Через 2 секунды автоматически открывается страница контактов
 
+    def count(self):
 
+         driver = self.app.driver
+
+         # Показать список контактов
+         self.app.contact.Show_Contact_List()
+         time.sleep(3)
+
+         # Посчитать количество контактов:
+         count =  len( driver.find_elements(By.NAME, "selected[]") )
+
+         return count
 

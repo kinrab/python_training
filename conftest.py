@@ -18,11 +18,11 @@ def app(request):
         if  not fixture.is_valid():
             fixture = Application()
 
-    print("Start fixture login:\n")
+    #print("Start fixture login:\n")
 
     fixture.session.Ensure_Login_process(username = "admin", password = "secret")
 
-    print("End fixture login.\n")
+    #print("End fixture login.\n")
 
     return fixture
 

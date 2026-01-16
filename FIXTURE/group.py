@@ -141,3 +141,15 @@ class GroupHelper:
         # Выбрать первый по списку чек-бокс
 
         driver.find_element(By.NAME, "selected[]").click()
+
+    def count(self):
+
+         driver = self.app.driver
+
+         self.Show_Groups_List()
+
+         count =  len( driver.find_elements(By.NAME, "selected[]") )
+
+         return count
+
+    
