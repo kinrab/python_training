@@ -1,31 +1,33 @@
+from sys import maxsize
 
 class Contact:
 
     def __init__( self,
                         first_name,
-                        middle_name,
-                        last_name,
-                        nick_name,
-                        contact_title,
-                        company_name,
-                        contact_address,
-                        home_phone,
-                        mobile_phone,
-                        work_phone,
-                        fax_phone,
-                        contact_email1,
-                        contact_email2,
-                        contact_email3,
-                        home_page,
-                        birthday_day,
-                        birthday_month,
-                        birthday_year,
-                        anniversary_day,
-                        anniversary_month,
-                        anniversary_year,
-                        second_address,
-                        second_home,
-                        second_notes):
+                        middle_name = None,
+                        last_name = None,
+                        nick_name = None,
+                        contact_title = None,
+                        company_name = None,
+                        contact_address = None,
+                        home_phone = None,
+                        mobile_phone = None,
+                        work_phone = None,
+                        fax_phone = None,
+                        contact_email1 = None,
+                        contact_email2 = None,
+                        contact_email3 = None,
+                        home_page = None,
+                        birthday_day = None,
+                        birthday_month = None,
+                        birthday_year = None,
+                        anniversary_day = None,
+                        anniversary_month = None,
+                        anniversary_year = None,
+                        second_address = None,
+                        second_home = None,
+                        second_notes = None,
+                        contact_id = None):
 
         self.first_name = first_name
         self.middle_name = middle_name
@@ -51,4 +53,16 @@ class Contact:
         self.second_address = second_address
         self.second_home = second_home
         self.second_notes = second_notes
+        self.contact_id = contact_id
+
+    def __eq__(self, other):
+
+        return   (self.contact_id == other.contact_id or self.contact_id == None or other.contact_id is None) # and self.first_name == other.first_name
+
+
+    def id_or_max(self):
+       if self.contact_id:
+           return int(self.contact_id)
+       else:
+            return maxsize
 

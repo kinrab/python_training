@@ -14,6 +14,10 @@ def test_add_new_contact(app):
     #
     # time.sleep(3)
 
+    # Загрузить исходный список контактов
+
+    old_contact_list = app.contact.get_contact_list()
+
     user_contact =  Contact( first_name = "Иванов",
                                          middle_name = "Иван",
                                          last_name = "Иванович",
@@ -40,6 +44,20 @@ def test_add_new_contact(app):
                                          second_notes = "Просто какой-то комментарий" )
 
     app.contact.Add_new_contact(user_contact)
+
+    new_contact_list = app.contact.get_contact_list()
+
+    assert len(old_contact_list) + 1 == app.contact.count() # В новом списке должно быть на один контакт больше
+
+    txt_fname =  "Select (" + user_contact.first_name +" " + user_contact.last_name + ")"
+
+    user_contact.first_name = txt_fname
+
+    old_contact_list.append(user_contact)
+
+    #assert old_sorted_list == new_sorted_list
+
+    assert sorted(old_contact_list, key = Contact.id_or_max) == sorted(new_contact_list, key = Contact.id_or_max)
 
     # app.session.Logout_process()
     # time.sleep(3)

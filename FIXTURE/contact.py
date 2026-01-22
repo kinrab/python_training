@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from MODEL.contact import Contact
 import time
 
 class ContactHelper:
@@ -189,6 +190,8 @@ class ContactHelper:
         #driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()            # исходный код клика по кнопке Enter полученный рекордером Selenium IDE / Katalon
         driver.find_element(By.NAME, "submit").click()                                              # - вроде так проще и понятнее должно быть чем CSS selector?
 
+        self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
+
         #print("STEP 26 - END OF TEST\n")
         #time.sleep(1)
 
@@ -225,6 +228,45 @@ class ContactHelper:
 
         time.sleep(3)  # Далее приложение автоматически откроет список оствашихся контактов
 
+        self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
+
+
+    def Delete_Contact_By_Index(self, index):
+
+        driver = self.app.driver
+
+        # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
+        self.app.contact.Show_Contact_List()
+        time.sleep(3)
+
+        # Выбираем первый контакт в списке - Check box activate
+        self.Select_Contact_By_Index(index)
+
+        # Нажимаем кнопку Delete
+        driver.find_element(By.XPATH, "//input[@value='Delete']").click()
+        time.sleep(3)
+
+        # Подтверждаем удаление во всплывающем окне
+
+        assert driver.switch_to.alert.text == "Delete 1 addresses?"
+
+        alert = driver.switch_to.alert
+
+        alert.accept()
+
+        time.sleep(3)  # Далее приложение автоматически откроет список оствашихся контактов
+
+        self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
+
+
+    def Select_Contact_By_Index(self, index):
+
+         driver = self.app.driver
+
+         driver.find_elements(By.NAME, "selected[]")[index].click()
+
+
+
     def Edit_First_Contact(self):
 
         driver = self.app.driver
@@ -257,7 +299,55 @@ class ContactHelper:
         driver.find_element(By.XPATH, "//input[@value='Update']").click()
         time.sleep(3)
 
+        self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
+
         # Через 2 секунды автоматически открывается страница контактов
+
+
+    def Edit_Contact_By_Index(self, index, contact_data):
+
+        driver = self.app.driver
+
+        # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
+        self.app.contact.Show_Contact_List()
+        time.sleep(3)
+
+
+        self.app.contact.Select_Contact_By_Index(index)
+
+        # Нажимаем кнопку Edit у выбранного контакта с индексом index
+
+        driver.find_elements(By.XPATH, "//img[@alt='Edit']")[index].click()
+        time.sleep(3)
+
+        # Изменяем firstname поле новым значением
+        item = driver.find_element(By.NAME, "firstname")
+        val = item.get_attribute("value")
+
+        driver.find_element(By.NAME, "firstname").click()
+        driver.find_element(By.NAME, "firstname").clear()
+        driver.find_element(By.NAME, "firstname").send_keys(contact_data.first_name)
+
+        time.sleep(3)
+
+        # Жмем кнопку Update
+        driver.find_element(By.XPATH, "//input[@value='Update']").click()
+        time.sleep(3)
+
+        self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
+
+        # Через 2 секунды автоматически открывается страница контактов
+
+    def Select_Contact_By_Index(self, index):
+
+        driver = self.app.driver
+
+        self.Show_Contact_List()
+
+        # Выбрать первый по списку чек-бокс
+
+        driver.find_elements(By.NAME, "selected[]")[index].click()
+
 
     def count(self):
 
@@ -272,3 +362,86 @@ class ContactHelper:
 
          return count
 
+    contacts_cash = None
+
+    def get_contact_list_AB(self): #  Модификация метода от автора курса - но он не показывал как его делал!
+
+        if self.contacts_cash is None:
+
+            driver = self.app.driver
+
+            self.Show_Contact_List()
+
+            self.contacts_cash = []
+
+            for row in driver.find_elements(By.NAME, "entry"):
+
+                cells = row.find_elements(By.TAG_NAME,"td")
+                firstname = cells[1].text
+                lastname = cells[2].text
+                contactid = cells[0].find_element(By.TAG_NAME, "input").get_attribute("value")
+                all_phones = cells[5].text.splitlines()
+
+                # print("firstname = " + firstname + "\n")
+                # print("lastname = " + lastname + "\n")
+                # print("id = "+ str(contactid) + "\n")
+                # print("all_phones = ", all_phones)
+
+                self.contacts_cash.append(Contact(first_name = firstname, last_name=lastname, contact_id=contactid,
+                                                                   home_phone=all_phones[0], mobile_phone=all_phones[1],
+                                                                   work_phone=all_phones[2], second_home=all_phones[3] ))
+
+        return list(self.contacts_cash)
+
+
+    def get_contact_list(self):
+
+        if self.contacts_cash is None:
+
+            driver = self.app.driver
+
+            self.Show_Contact_List()
+
+            self.contacts_cash = []
+
+            for element in driver.find_elements(By.NAME, "selected[]"):
+
+                title = element.get_attribute("title")
+                c_id = element.get_attribute("value")
+
+
+                #print("Contact list add: internal tittle" + title + " id = " + str(c_id) + "\n" )
+
+                self.contacts_cash.append(Contact(first_name = title, contact_id= c_id ))
+
+        return list(self.contacts_cash)
+
+
+
+    def Open_Contact_for_Edit_By_Index(self, index):
+
+        driver = self.app.driver
+
+        self.Show_Contact_List() # Это по сути открытые страницы Home
+
+        # Выбрать нужный чек-бокс с индксом index
+        driver.find_elements(By.NAME, "selected[]")[index].click()
+
+        # нажать кнопку Edit у выбранного контакта:
+        driver.find_elements(By.XPATH, "//img[@alt='Edit']")[index].click()
+
+    def get_contact_info_from_edit_page(self, index):
+
+         driver = self.app.driver
+
+         self.Open_Contact_for_Edit_By_Index(index)
+
+         firstname = driver.find_element(By.NAME, "firstname").get_attribute("value")
+         lastname = driver.find_element(By.NAME, "lastname").get_attribute("value")
+         contactid = driver.find_element(By.NAME, "id").get_attribute("value")
+         homephone = driver.find_element(By.NAME, "home").get_attribute("value")
+         workphone = driver.find_element(By.NAME, "work").get_attribute("value")
+         mobilephone = driver.find_element(By.NAME, "mobile").get_attribute("value")
+         sechome = driver.find_element(By.NAME, "phone2").get_attribute("value")
+
+         return Contact(first_name = firstname, last_name = lastname, contact_id = contactid, home_phone=homephone, work_phone=workphone,mobile_phone=mobilephone, second_home=sechome)

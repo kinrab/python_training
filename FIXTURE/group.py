@@ -1,5 +1,7 @@
 
 from selenium.webdriver.common.by import By
+from MODEL.group import Group
+
 import time
 
 class GroupHelper:
@@ -28,6 +30,8 @@ class GroupHelper:
 
         self.Show_Groups_List()
         time.sleep(3)
+
+        self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
     def Change_Field_Value(self, text, group_item):
 
@@ -61,19 +65,25 @@ class GroupHelper:
 
     def Delete_First_Group (self):
 
-        driver = self.app.driver
+        self.Delete_Group_By_Index(0)
 
-        self.Show_Groups_List()
-        time.sleep(3)
 
-        self.Select_First_Group()
-
-        # Нажать на кнопку Delete
-        driver.find_element(By.NAME, "delete").click()
-        time.sleep(3)
-
-        self.Show_Groups_List()
-        time.sleep(3)
+        # Старая реализация до создания метода Delete_Group_By_Index
+        # driver = self.app.driver
+        #
+        # self.Show_Groups_List()
+        # time.sleep(3)
+        #
+        # self.Select_First_Group()
+        #
+        # # Нажать на кнопку Delete
+        # driver.find_element(By.NAME, "delete").click()
+        # time.sleep(3)
+        #
+        # self.Show_Groups_List()
+        # time.sleep(3)
+        #
+        # self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
 
     def Edit_First_Group(self):
@@ -114,15 +124,44 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
+        self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
+
 
     def Modify_First_Group(self, new_group_data):
+
+        self.Modify_Group_By_Index(0, new_group_data)
+
+        # Старая реализация до создяния метода:  Modify_Group_By_Index
+        # driver = self.app.driver
+        #
+        # self.Show_Groups_List()
+        # time.sleep(3)
+        #
+        # self.Select_First_Group()
+        #
+        # # Open modification form
+        # driver.find_element(By.NAME, "edit").click()
+        #
+        # # Fill the form
+        # self.Fill_Group_Form(new_group_data)
+        #
+        # # Submit midification
+        # driver.find_element(By.NAME, "update").click()
+        #
+        # # Вернуться к списку групп
+        # self.Show_Groups_List()
+        # time.sleep(3)
+        #
+        # self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
+
+    def Modify_Group_By_Index(self, index, new_group_data):
 
         driver = self.app.driver
 
         self.Show_Groups_List()
         time.sleep(3)
 
-        self.Select_First_Group()
+        self.Select_Group_By_Index(index)
 
         # Open modification form
         driver.find_element(By.NAME, "edit").click()
@@ -137,6 +176,11 @@ class GroupHelper:
         self.Show_Groups_List()
         time.sleep(3)
 
+        self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
+
+
+
+
     def Select_First_Group(self):
 
         driver = self.app.driver
@@ -147,6 +191,17 @@ class GroupHelper:
 
         driver.find_element(By.NAME, "selected[]").click()
 
+    def Select_Group_By_Index(self, index):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+
+        # Выбрать первый по списку чек-бокс
+
+        driver.find_elements(By.NAME, "selected[]")[index].click()
+
+
     def count(self):
 
         driver = self.app.driver
@@ -156,4 +211,52 @@ class GroupHelper:
         count =  len( driver.find_elements(By.NAME, "selected[]") )
 
         return count
+
+    group_cash = None
+
+    def get_group_list(self):
+
+        if self.group_cash is None:
+
+            driver = self.app.driver
+
+            self.Show_Groups_List()
+
+            self.group_cash = []
+
+            for element in driver.find_elements(By.CSS_SELECTOR, "span.group"):
+                text = element.text
+                item = element.find_element(By.NAME, "selected[]")
+                id = item.get_attribute("value")
+                self.group_cash.append(Group(group_name=text,group_id=id))
+
+        return list(self.group_cash)
+
+
+
+    def Delete_Group_By_Index (self, index):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+        self.Select_Group_By_Index(index)
+
+        # Нажать на кнопку Delete
+        driver.find_element(By.NAME, "delete").click()
+        time.sleep(3)
+
+        self.Show_Groups_List()
+        time.sleep(3)
+
+        self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
+
+
+
+
+
+
+
+
 

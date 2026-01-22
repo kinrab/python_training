@@ -1,0 +1,24 @@
+
+import re
+import time
+
+def test_phones(app):
+
+    contact_from_home_page = app.contact.get_contact_list_AB()[0]  # Берем первый элемент списка контактов
+
+    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)  # Берем первый элемент со страницы Edit контакта
+
+    assert contact_from_home_page.home_phone ==  clear(contact_from_edit_page.home_phone)
+
+    assert contact_from_home_page.work_phone ==  clear(contact_from_edit_page.work_phone)
+
+    assert contact_from_home_page.mobile_phone ==  clear(contact_from_edit_page.mobile_phone)
+
+    assert contact_from_home_page.second_home ==  clear(contact_from_edit_page.second_home)
+
+
+def clear(s): # Удаляем символы  () -
+
+    return re.sub("[() -]", "", s)
+
+
