@@ -17,7 +17,7 @@ def test_phones(app):
     assert contact_from_home_page.second_home ==  clear(contact_from_edit_page.second_home)
 
 
-def clear(s): # Удаляем символы  () -
+def clear(s): # Удаляем символы  () - из строк s используя модуль регулярных выражений re
 
     return re.sub("[() -]", "", s)
 

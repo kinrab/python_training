@@ -12,7 +12,7 @@ class SessionHelper:
 
         driver = self.app.driver
 
-        driver.get("http://localhost:8080/addressbook/")
+        driver.get(self.app.base_url)
 
     def Login_process(self, username, password):
 
