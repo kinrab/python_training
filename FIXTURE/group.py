@@ -216,7 +216,7 @@ class GroupHelper:
 
     def get_group_list(self):
 
-        print ("Enter get_group_list: ")
+        #print ("Enter get_group_list: ")
         if self.group_cash is None:
 
             driver = self.app.driver
@@ -232,9 +232,9 @@ class GroupHelper:
                 self.group_cash.append(Group(group_name=text,group_id=id))
 
 
-        print (self.group_cash)
+        #print (self.group_cash)
 
-        print ("Exit get_group_list: ")
+        #print ("Exit get_group_list: ")
 
         return list(self.group_cash)
 

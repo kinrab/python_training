@@ -6,7 +6,6 @@ from FIXTURE.contact import ContactHelper
 
 class Application:
 
-
     def __init__(self, browser, base_url):
 
         if browser == "firefox":
@@ -15,7 +14,7 @@ class Application:
             self.driver = webdriver.Chrome()
         elif browser == "ie":
             self.driver = webdriver.Ie()
-        elif browser == "Edge":
+        elif browser == "edge":
             self.driver = webdriver.Edge()
         else:
             raise ValueError("Unrecognised browser %s" % browser)
