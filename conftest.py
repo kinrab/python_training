@@ -18,7 +18,7 @@ def app(request):
     global fixture
     global parameters
 
-    select_browser = request.config.getoption("--browser")
+    # Перенесем в конфиг: select_browser = request.config.getoption("--browser")
 
     if parameters is None:
 
@@ -28,7 +28,7 @@ def app(request):
             parameters = json.load(config_file)
 
     if (fixture is None) or not fixture.is_valid():
-        fixture = Application(browser = select_browser, base_url = parameters['baseUrl'])
+        fixture = Application(browser = parameters['browser'], base_url = parameters['baseUrl'])
 
     fixture.session.Ensure_Login_process(username = parameters['username'], password = parameters['password'])
 
@@ -47,7 +47,11 @@ def stop(request):
 
 def pytest_addoption(parser):
     parser.addoption("--config", action="store", default="config.json" )
-    parser.addoption("--browser", action="store", default="firefox" )
+    #parser.addoption("--browser", action="store", default="firefox" ) # Перенесли в конфиг!
+
+# metafunc в Python — это объект, используемый в фреймворке pytest внутри хук-функции pytest_generate_tests для динамической параметризации тестов.
+# Он позволяет генерировать тестовые случаи «на лету», анализировать аргументы функций и создавать вариации тестов без использования
+# декоратора @pytest.mark.parametrize для каждого случая.
 
 def pytest_generate_tests(metafunc):
 

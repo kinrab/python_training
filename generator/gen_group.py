@@ -1,4 +1,10 @@
 
+# Параметры для запуска: gen_group.py -n 3 -f data/groups.json
+#
+#  n 3 - число групп которые нужно сгенерировать генератору
+#  f data/groups.json - имя файла и папка в которой он находится
+
+
 from MODEL.group import Group
 import os.path
 import random
