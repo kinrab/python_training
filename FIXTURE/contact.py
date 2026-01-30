@@ -184,7 +184,7 @@ class ContactHelper:
         driver.find_element(By.NAME, "notes").send_keys(new_contact.second_notes)
         #print("STEP 25\n")
 
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Нажимаем на кнопу "Enter":
         #driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()            # исходный код клика по кнопке Enter полученный рекордером Selenium IDE / Katalon
@@ -201,7 +201,7 @@ class ContactHelper:
 
         # Нажать на кнопку Home что по факту откроет список контактов:
         driver.find_element(By.XPATH, "//a[contains(text(),'home')]").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
     def Delete_First_Contact(self):
 
@@ -209,14 +209,14 @@ class ContactHelper:
 
         # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
         self.app.contact.Show_Contact_List()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Выбираем первый контакт в списке - Check box activate
         driver.find_element(By.NAME, "selected[]").click()
 
         # Нажимаем кнопку Delete
         driver.find_element(By.XPATH, "//input[@value='Delete']").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Подтверждаем удаление во всплывающем окне
 
@@ -237,14 +237,14 @@ class ContactHelper:
 
         # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
         self.app.contact.Show_Contact_List()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Выбираем первый контакт в списке - Check box activate
         self.Select_Contact_By_Index(index)
 
         # Нажимаем кнопку Delete
         driver.find_element(By.XPATH, "//input[@value='Delete']").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Подтверждаем удаление во всплывающем окне
 
@@ -254,7 +254,7 @@ class ContactHelper:
 
         alert.accept()
 
-        time.sleep(1)  # Далее приложение автоматически откроет список оствашихся контактов
+        #time.sleep(1)  # Далее приложение автоматически откроет список оствашихся контактов
 
         self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
 
@@ -273,11 +273,11 @@ class ContactHelper:
 
         # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
         self.app.contact.Show_Contact_List()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Нажимаем кнопку Edit у первого контакта  xpath = //img[@alt='Edit']
         driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Изменяем firstname поле новым значением
         item = driver.find_element(By.NAME, "firstname")
@@ -293,11 +293,11 @@ class ContactHelper:
         driver.find_element(By.NAME, "firstname").clear()
         driver.find_element(By.NAME, "firstname").send_keys(val)
 
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Жмем кнопку Update
         driver.find_element(By.XPATH, "//input[@value='Update']").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
 
@@ -310,7 +310,7 @@ class ContactHelper:
 
         # Открыть страницу контактов после окончания теста добавления пустой группы ! иначе тесты упадут !
         self.app.contact.Show_Contact_List()
-        time.sleep(1) 
+        #time.sleep(1)
 
 
         self.app.contact.Select_Contact_By_Index(index)
@@ -318,7 +318,7 @@ class ContactHelper:
         # Нажимаем кнопку Edit у выбранного контакта с индексом index
 
         driver.find_elements(By.XPATH, "//img[@alt='Edit']")[index].click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Изменяем firstname поле новым значением
         item = driver.find_element(By.NAME, "firstname")
@@ -328,11 +328,11 @@ class ContactHelper:
         driver.find_element(By.NAME, "firstname").clear()
         driver.find_element(By.NAME, "firstname").send_keys(contact_data.first_name)
 
-        time.sleep(1) 
+        #time.sleep(1)
 
         # Жмем кнопку Update
         driver.find_element(By.XPATH, "//input[@value='Update']").click()
-        time.sleep(1) 
+        #time.sleep(1)
 
         self.contacts_cash = None # Кэш не валиден после добавлени, модификации, удаления контактов
 
@@ -355,7 +355,7 @@ class ContactHelper:
 
          # Показать список контактов
          self.app.contact.Show_Contact_List()
-         time.sleep(1) 
+         #time.sleep(1)
 
          # Посчитать количество контактов:
          count =  len( driver.find_elements(By.NAME, "selected[]") )

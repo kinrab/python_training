@@ -6,47 +6,70 @@ import os.path
 import pytest
 import jsonpickle
 import json
+from FIXTURE.db import DbFixture
 
 
-fixture = None
+AppFixture = None
 parameters = None
 
-@pytest.fixture
-
-def app(request):
-
-    global fixture
+def load_config(file):
     global parameters
-
-    # Перенесем в конфиг: select_browser = request.config.getoption("--browser")
-
     if parameters is None:
-
-        cfg_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--config"))
+        cfg_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
 
         with open(cfg_file) as config_file:
             parameters = json.load(config_file)
+    return parameters
 
-    if (fixture is None) or not fixture.is_valid():
-        fixture = Application(browser = parameters['browser'], base_url = parameters['baseUrl'])
+@pytest.fixture
+def app(request):
 
-    fixture.session.Ensure_Login_process(username = parameters['username'], password = parameters['password'])
+    global AppFixture
 
-    return fixture
+    web_config = load_config(request.config.getoption("--config"))['web']
+
+    if (AppFixture is None) or not AppFixture.is_valid():
+
+        AppFixture = Application(browser =  web_config['browser'], base_url =  web_config['baseUrl'])
+
+    AppFixture.session.Ensure_Login_process(username =  web_config['username'], password =  web_config['password'])
+
+    return AppFixture
+
+@pytest.fixture
+def db(request):
+
+    db_config = load_config(request.config.getoption("--config"))['db']
+
+    dbFixture = DbFixture(host = db_config['host'],
+                          name = db_config['name'],
+                          user = db_config['user'],
+                          password = db_config['password'])
+
+    def fin():
+        dbFixture.destroy()
+
+    request.addfinalizer(fin)
+    return dbFixture
+
+
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption("--check_ui")
 
 
 @pytest.fixture( scope="session", autouse = True )
-
 def stop(request):
     def fin():
-         fixture.session.Ensure_Logout_process()
-         fixture.Destroy()
+         AppFixture.session.Ensure_Logout_process()
+         AppFixture.Destroy()
 
     request.addfinalizer(fin)
-    return fixture
+    return AppFixture
 
 def pytest_addoption(parser):
     parser.addoption("--config", action="store", default="config.json" )
+    parser.addoption("--check_ui", action="store_true")
     #parser.addoption("--browser", action="store", default="firefox" ) # Перенесли в конфиг!
 
 # metafunc в Python — это объект, используемый в фреймворке pytest внутри хук-функции pytest_generate_tests для динамической параметризации тестов.
@@ -55,14 +78,14 @@ def pytest_addoption(parser):
 
 def pytest_generate_tests(metafunc):
 
-    for fixture in metafunc.fixturenames:
+    for AppFixture in metafunc.fixturenames:
 
-        if fixture.startswith("data_"):
-            testdatalocA = load_from_module(fixture[5:])
-            metafunc.parametrize(fixture, testdatalocA, ids=[str(x) for x in testdatalocA])
-        elif fixture.startswith("json_"):
-            testdatalocB = load_from_json_file(fixture[5:])
-            metafunc.parametrize(fixture,testdatalocB, ids=[str(x) for x in testdatalocB])
+        if AppFixture.startswith("data_"):
+            testdatalocA = load_from_module(AppFixture[5:])
+            metafunc.parametrize(AppFixture, testdatalocA, ids=[str(x) for x in testdatalocA])
+        elif AppFixture.startswith("json_"):
+            testdatalocB = load_from_json_file(AppFixture[5:])
+            metafunc.parametrize(AppFixture,testdatalocB, ids=[str(x) for x in testdatalocB])
 
 def load_from_module (module):
     str_name = "DATA.%s" % module

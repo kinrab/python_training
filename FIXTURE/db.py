@@ -1,0 +1,46 @@
+
+import mysql.connector
+from MODEL.group import Group
+from MODEL.contact import Contact
+
+class DbFixture:
+    def __init__(self, host, name, user, password):
+        self.host = host,
+        self.name = name,
+        self.user = user,
+        self.password = password
+        self.connection = mysql.connector.connect( host = host, database = name,  user= user, password = password)
+        self.connection.autocommit = True
+
+    def get_group_list(self):
+
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select group_id,group_name,group_header,group_footer from group_list")
+            for row in cursor:
+                (id, name, header, footer) = row
+                list.append(Group(group_id=str(id), group_name=name, group_header=header, group_footer=footer))
+        finally:
+            cursor.close()
+        return list
+
+    def get_contact_list(self):
+
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            # QUERY:  select id, firstname,lastname,deprecated from addressbook where deprecated =  DATE_FORMAT('0000-00-00 00:00:00', '%Y-%m-%d %H:%i:%s'
+
+            cursor.execute("select id,firstname,lastname,middlename from addressbook where deprecated = '0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, firstname, lastname, middlename) = row
+                list.append(Contact(first_name = firstname, last_name = lastname, middle_name = middlename, contact_id = id))
+        finally:
+            cursor.close()
+        return list
+
+
+    def destroy(self):
+        self.connection.close()
+

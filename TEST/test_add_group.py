@@ -3,6 +3,32 @@
 from MODEL.group import Group
 import time
 
+##########################################################################################################################
+# Вариант параметризации через фикстуру c загрузкой из файла формата JSON и ИСПОЛЬЗОВАНИЕМ БАЗЫ ДАННЫХ !!!
+###########################################################################################################################
+def test_add_new_group_version_forth(app, db, json_groups):
+
+    group = json_groups
+
+    old_group_list = db.get_group_list()
+
+    app.group.Add_New_Group(group)
+    #time.sleep(1)
+
+    #dlina = app.group.count()
+    #assert len(old_group_list) + 1 == dlina
+
+    new_group_list =  db.get_group_list()
+
+    group.group_header = None
+    group.group_footer = None
+    old_group_list.append(group)
+
+    old_sorted_list =  sorted(old_group_list, key = Group.id_or_max)
+
+    new_sorted_list  = sorted(new_group_list, key = Group.id_or_max)
+
+    assert old_sorted_list == new_sorted_list
 ###########################################################################################################################
 # Вариант параметризации через фикстуру c загрузкой из файла формата JSON
 ###########################################################################################################################
@@ -13,9 +39,7 @@ def test_add_new_group_version_third(app, json_groups):
     old_group_list = app.group.get_group_list()
 
     app.group.Add_New_Group(group)
-    time.sleep(1)
-
-    new_group_list =  app.group.get_group_list()
+    #time.sleep(1)
 
     dlina = app.group.count()
 
@@ -45,7 +69,7 @@ def test_add_new_group_version_second(app, data_groups):
     old_group_list = app.group.get_group_list()
 
     app.group.Add_New_Group(group)
-    time.sleep(1)
+    #time.sleep(1)
 
     new_group_list =  app.group.get_group_list()
 
@@ -85,7 +109,7 @@ def test_add_new_group_version_first(app, group):
     old_group_list = app.group.get_group_list()
 
     app.group.Add_New_Group(group)
-    time.sleep(1)
+    #time.sleep(1)
 
     new_group_list =  app.group.get_group_list()
 

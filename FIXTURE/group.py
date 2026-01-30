@@ -16,20 +16,20 @@ class GroupHelper:
         driver = self.app.driver
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         driver.find_element(By.NAME, "new").click()
 
-        time.sleep(1)
+        #time.sleep(1)
 
         self.Fill_Group_Form(group)
 
-        time.sleep(1)
+        #time.sleep(1)
 
         driver.find_element(By.NAME, "submit").click()
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
@@ -42,7 +42,7 @@ class GroupHelper:
             driver.find_element(By.NAME, group_item).click()
             driver.find_element(By.NAME, group_item).clear()
             driver.find_element(By.NAME, group_item).send_keys(text)
-            time.sleep(1)
+            #time.sleep(1)
 
     def Fill_Group_Form(self, group):
 
@@ -91,7 +91,7 @@ class GroupHelper:
         driver = self.app.driver
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.Select_First_Group()
 
@@ -102,27 +102,27 @@ class GroupHelper:
         item = driver.find_element(By.NAME, "group_name")
         val = item.get_attribute("value")
 
-        print(" Исходное значение: {  "+ val + " }")
+        #print(" Исходное значение: {  "+ val + " }")
 
         val = val + "(*)"
 
-        print("Новое значение: {  "+ val + " }")
+        #print("Новое значение: {  "+ val + " }")
 
         driver.find_element(By.NAME, "group_name").click()
         driver.find_element(By.NAME, "group_name").clear()
         driver.find_element(By.NAME, "group_name").send_keys(val)
 
-        time.sleep(1)
+        #time.sleep(1)
 
         # Нажать на кнопку Update
         driver.find_element(By.NAME, "update").click()
 
-        time.sleep(1)
+        #time.sleep(1)
 
         # Открыть список групп
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
@@ -159,7 +159,7 @@ class GroupHelper:
         driver = self.app.driver
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.Select_Group_By_Index(index)
 
@@ -174,7 +174,7 @@ class GroupHelper:
 
         # Вернуться к списку групп
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
@@ -200,6 +200,17 @@ class GroupHelper:
         # Выбрать первый по списку чек-бокс
 
         driver.find_elements(By.NAME, "selected[]")[index].click()
+
+
+    def Select_Group_By_Id(self, id):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+
+        # Выбрать первый по списку чек-бокс
+
+        driver.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
 
 
     def count(self):
@@ -245,20 +256,37 @@ class GroupHelper:
         driver = self.app.driver
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.Select_Group_By_Index(index)
 
         # Нажать на кнопку Delete
         driver.find_element(By.NAME, "delete").click()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.Show_Groups_List()
-        time.sleep(1)
+        #time.sleep(1)
 
         self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
 
+    def Delete_Group_By_id (self, id):
+
+        driver = self.app.driver
+
+        self.Show_Groups_List()
+        #time.sleep(1)
+
+        self.Select_Group_By_Id(id)
+
+        # Нажать на кнопку Delete
+        driver.find_element(By.NAME, "delete").click()
+        #time.sleep(1)
+
+        self.Show_Groups_List()
+        #time.sleep(1)
+
+        self.group_cash = None # Кэш не валиден после добавлени, модификации, удаления групп
 
 
 
