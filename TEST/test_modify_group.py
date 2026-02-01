@@ -74,10 +74,8 @@ def test_modify_group_header_of_first_group(app):
     old_group_list = app.group.get_group_list()
 
     # DEBUG:
-
-    for element in old_group_list:
-        print("old list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
-
+    # for element in old_group_list:
+    #     print("old list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
     # END DEBUG
 
     group = Group(group_header = "Group name B")
@@ -89,15 +87,15 @@ def test_modify_group_header_of_first_group(app):
 
     new_group_list =  app.group.get_group_list()
 
-    for element in new_group_list:
-        print("new list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
+    # for element in new_group_list:
+    #     print("new list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
 
     assert len(old_group_list) == len(new_group_list)
 
     old_group_list[0] = group
 
-    for element in old_group_list:
-        print("old list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
+    # for element in old_group_list:
+    #     print("old list item: name=" + element.group_name + " id = " + str(element.group_id) + "\n")
 
     assert sorted(old_group_list, key = Group.id_or_max) == sorted(new_group_list, key = Group.id_or_max)
 

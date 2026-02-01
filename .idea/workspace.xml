@@ -200,13 +200,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.pytest for BDD.group_runner.test_add_new_group.executor": "Run",
+    "Python tests.pytest for TEST.group_runner.test_add_new_group.executor": "Run",
+    "Python tests.pytest for TEST.test_add_contact.test_add_new_contact_version_second.executor": "Run",
     "Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth.executor": "Run",
     "Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third.executor": "Run",
     "Python tests.pytest for TEST.test_del_group.test_del_some_group_db.executor": "Run",
+    "Python tests.pytest for TEST.test_phones.test_phones.executor": "Run",
+    "Python tests.pytest in TEST.executor": "Debug",
     "Python tests.pytest in test_add_contact.py.executor": "Run",
     "Python tests.pytest in test_add_group.py.executor": "Run",
     "Python tests.pytest in test_db_matches_ui.py.executor": "Run",
-    "Python tests.pytest in test_del_group.py.executor": "Debug",
+    "Python tests.pytest in test_del_group.py.executor": "Run",
+    "Python tests.pytest in test_phones.py.executor": "Run",
     "Python.check_db_connection.executor": "Run",
     "Python.conftest.executor": "Run",
     "Python.gen_contact.executor": "Run",
@@ -216,7 +221,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/REPO_PYTHON/python_training",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
   <component name="PyConsoleOptionsProvider">
@@ -232,7 +237,7 @@
       <recent name="D:\REPO_PYTHON\python_training\TEST" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for BDD.group_runner.test_add_new_group">
+  <component name="RunManager" selected="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -252,7 +257,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="check_db_connection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,7 +270,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/check_db_connection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conftest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,7 +279,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for BDD.group_runner.test_add_new_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for TEST.test_bdd_runner.test_add_new_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -287,11 +292,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;BDD.group_runner.test_add_new_group&quot;" />
+      <option name="_new_target" value="&quot;TEST.test_bdd_runner.test_add_new_group&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for TEST.test_add_group.test_add_new_group_version_forth" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for TEST.test_phones.test_phones" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -304,11 +309,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TEST.test_add_group.test_add_new_group_version_forth&quot;" />
+      <option name="_new_target" value="&quot;TEST.test_phones.test_phones&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for TEST.test_add_group.test_add_new_group_version_third" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_del_group.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -321,11 +326,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TEST.test_add_group.test_add_new_group_version_third&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_del_group.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for TEST.test_del_group.test_del_some_group_db" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_phones.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -337,25 +342,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TEST.test_del_group.test_del_some_group_db&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_additionalArguments" value="&quot;-s&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_phones.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.check_db_connection" />
-      <item itemvalue="Python tests.pytest for BDD.group_runner.test_add_new_group" />
-      <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth" />
-      <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third" />
-      <item itemvalue="Python tests.pytest for TEST.test_del_group.test_del_some_group_db" />
+      <item itemvalue="Python.conftest" />
+      <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
+      <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
+      <item itemvalue="Python tests.pytest in test_del_group.py" />
+      <item itemvalue="Python tests.pytest in test_phones.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for BDD.group_runner.test_add_new_group" />
-        <item itemvalue="Python.check_db_connection" />
-        <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth" />
-        <item itemvalue="Python tests.pytest for TEST.test_del_group.test_del_some_group_db" />
-        <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third" />
+        <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
+        <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
+        <item itemvalue="Python tests.pytest in test_phones.py" />
+        <item itemvalue="Python tests.pytest in test_del_group.py" />
+        <item itemvalue="Python.conftest" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +449,10 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="tests">
-        <watch expression="parameters" language="Python" />
+        <watch expression="contact_from_home_page.mobile_phone" />
+        <watch expression="contact_from_home_page.second_home" />
+        <watch expression="tmp1" />
+        <watch expression="tmp2" />
       </configuration>
       <configuration name="PythonConfigurationType">
         <watch expression="str" language="Python" />

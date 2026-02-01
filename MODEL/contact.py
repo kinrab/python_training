@@ -56,7 +56,7 @@ class Contact:
         self.contact_id = contact_id
 
     def __repr__(self):
-        return "%s:%s:%s:%s" % (self.first_name, self.last_name, self.middle_name, self.contact_id)
+        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (self.first_name, self.last_name, self.middle_name, self.contact_id,self.home_phone,self.mobile_phone, self.work_phone, self.fax_phone, self.home_page, self.second_home)
 
     def __eq__(self, other):
 

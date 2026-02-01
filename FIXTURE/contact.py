@@ -366,32 +366,28 @@ class ContactHelper:
 
     def get_contact_list_AB(self): #  Модификация метода от автора курса - но он не показывал как его делал!
 
-        if self.contacts_cash is None:
+    # Отключил кэш - так как при запуске всех тестов подряд перед началом этого теста в кэше оказываются данные
+    # с неполным списком!  Только firstname lastname и id а нам нужны еще телефоны
 
-            driver = self.app.driver
 
-            self.Show_Contact_List()
+        driver = self.app.driver
 
-            self.contacts_cash = []
+        self.Show_Contact_List()
 
-            for row in driver.find_elements(By.NAME, "entry"):
+        contacts_list = []
 
-                cells = row.find_elements(By.TAG_NAME,"td")
-                firstname = cells[1].text
-                lastname = cells[2].text
-                contactid = cells[0].find_element(By.TAG_NAME, "input").get_attribute("value")
-                all_phones = cells[5].text.splitlines()
+        for row in driver.find_elements(By.NAME, "entry"):
 
-                # print("firstname = " + firstname + "\n")
-                # print("lastname = " + lastname + "\n")
-                # print("id = "+ str(contactid) + "\n")
-                # print("all_phones = ", all_phones)
+            cells = row.find_elements(By.TAG_NAME,"td")
+            lastname = cells[1].text
+            firstname = cells[2].text
+            contactid = cells[0].find_element(By.TAG_NAME, "input").get_attribute("value")
+            all_phones = cells[5].text.splitlines()
 
-                self.contacts_cash.append(Contact(first_name = firstname, last_name=lastname, contact_id=contactid,
-                                                                   home_phone=all_phones[0], mobile_phone=all_phones[1],
-                                                                   work_phone=all_phones[2], second_home=all_phones[3] ))
-
-        return list(self.contacts_cash)
+            contacts_list.append(Contact(first_name = firstname, last_name=lastname, contact_id=contactid,
+                                         home_phone=all_phones[0], mobile_phone=all_phones[1],
+                                         work_phone=all_phones[2], second_home=all_phones[3] ))
+        return list(contacts_list)
 
 
     def get_contact_list(self):
