@@ -197,33 +197,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.pytest for BDD.group_runner.test_add_new_group.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.group_runner.test_add_new_group.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.test_add_contact.test_add_new_contact_version_second.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.test_del_group.test_del_some_group_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for TEST.test_phones.test_phones.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in TEST.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.pytest in test_add_contact.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_add_group.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_db_matches_ui.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_del_group.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_phones.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.check_db_connection.executor&quot;: &quot;Run&quot;,
-    &quot;Python.conftest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gen_contact.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gen_group.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_add_group.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/REPO_PYTHON/python_training&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.pytest for BDD.group_runner.test_add_new_group.executor": "Run",
+    "Python tests.pytest for TEST.group_runner.test_add_new_group.executor": "Run",
+    "Python tests.pytest for TEST.test_add_contact.test_add_new_contact_version_second.executor": "Run",
+    "Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth.executor": "Run",
+    "Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third.executor": "Run",
+    "Python tests.pytest for TEST.test_del_group.test_del_some_group_db.executor": "Run",
+    "Python tests.pytest for TEST.test_phones.test_phones.executor": "Run",
+    "Python tests.pytest in TEST.executor": "Debug",
+    "Python tests.pytest in test_add_contact.py.executor": "Run",
+    "Python tests.pytest in test_add_group.py.executor": "Run",
+    "Python tests.pytest in test_db_matches_ui.py.executor": "Run",
+    "Python tests.pytest in test_del_group.py.executor": "Run",
+    "Python tests.pytest in test_phones.py.executor": "Run",
+    "Python.check_db_connection.executor": "Run",
+    "Python.conftest.executor": "Run",
+    "Python.gen_contact.executor": "Run",
+    "Python.gen_group.executor": "Run",
+    "Python.test_add_group.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/REPO_PYTHON/python_training",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="python_training" is-module-sdk="true">
