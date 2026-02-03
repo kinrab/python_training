@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d29702c-f3c0-4bdc-92df-cf18f9d957e4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FIXTURE/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/FIXTURE/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEST/test_phones.py" beforeDir="false" afterPath="$PROJECT_DIR$/TEST/test_phones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +211,7 @@
     &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_del_group.test_del_some_group_db.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_phones.test_phones.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in TEST.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest in TEST.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_add_contact.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_add_group.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_db_matches_ui.py.executor&quot;: &quot;Run&quot;,
@@ -221,6 +223,7 @@
     &quot;Python.gen_group.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_add_group.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/REPO_PYTHON/python_training&quot;,
@@ -240,7 +243,7 @@
       <recent name="D:\REPO_PYTHON\python_training\TEST" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group">
+  <component name="RunManager" selected="Python tests.pytest in test_phones.py">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -259,28 +262,6 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
-    </configuration>
-    <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python_training" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conftest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="pytest for TEST.test_bdd_runner.test_add_new_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
@@ -316,7 +297,24 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_del_group.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in TEST" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python_training" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TEST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_add_contact.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -329,7 +327,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_del_group.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_add_contact.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -351,19 +349,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.conftest" />
+      <item itemvalue="Python tests.pytest in TEST" />
+      <item itemvalue="Python tests.pytest in test_add_contact.py" />
       <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
       <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
-      <item itemvalue="Python tests.pytest in test_del_group.py" />
       <item itemvalue="Python tests.pytest in test_phones.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_phones.py" />
+        <item itemvalue="Python tests.pytest in test_add_contact.py" />
+        <item itemvalue="Python tests.pytest in TEST" />
         <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
         <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
-        <item itemvalue="Python tests.pytest in test_phones.py" />
-        <item itemvalue="Python tests.pytest in test_del_group.py" />
-        <item itemvalue="Python.conftest" />
       </list>
     </recent_temporary>
   </component>

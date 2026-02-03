@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from MODEL.contact import Contact
+import allure
 import time
 
 class ContactHelper:
@@ -364,6 +365,7 @@ class ContactHelper:
 
     contacts_cash = None
 
+    @allure.step('Get contact list')
     def get_contact_list_AB(self): #  Модификация метода от автора курса - но он не показывал как его делал!
 
     # Отключил кэш - так как при запуске всех тестов подряд перед началом этого теста в кэше оказываются данные
@@ -426,6 +428,7 @@ class ContactHelper:
         # нажать кнопку Edit у выбранного контакта:
         driver.find_elements(By.XPATH, "//img[@alt='Edit']")[index].click()
 
+    @allure.step('Get contact list from edit page')
     def get_contact_info_from_edit_page(self, index):
 
          driver = self.app.driver
