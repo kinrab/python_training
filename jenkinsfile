@@ -17,16 +17,28 @@ pipeline
 
     }
 
-    stage('Run') 
+    stage('Preparation') 
+    {
+
+        steps 
+        {          
+           bat 'python -m venv venv'  
+           bat '.venv\Scripts\activate'
+           pip install -r requirements.txt
+          
+        }
+
+    }
+
+    stage('Run tests') 
     {
 
         steps 
         {
 
-            // Example build step
+            // Exammple
 
-           sh 'echo Hello'
-
+           bat 'pytest TEST\test.phones.py'
         }
 
     }
