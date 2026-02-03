@@ -41,7 +41,7 @@ def test_phones(app):
     tmpA = clear(contact_from_edit_page.home_phone)
     tmpB = clear(contact_from_home_page.home_phone)
 
-    with allure.step(f'Comparing 1 assert tmpA{tmpA} & tmpB{tmpB}'):
+    with allure.step(f'Comparing 1 assert tmpA={tmpA} & tmpB={tmpB}'):
         Flag1 = ( tmpA == tmpB )
         if Flag1 is False:
             print("Flag1: False\n")
@@ -52,7 +52,7 @@ def test_phones(app):
     tmpA = clear(contact_from_edit_page.work_phone)
     tmpB = clear(contact_from_home_page.work_phone)
 
-    with allure.step(f'Comparing 2 assert tmpA={tmpA} & tmpB{tmpB}'):
+    with allure.step(f'Comparing 2 assert tmpA={tmpA} & tmpB={tmpB}'):
         Flag2 = (tmpA == tmpB )
         if Flag2 is False:
             print("Flag2: False\n")
@@ -74,7 +74,7 @@ def test_phones(app):
     tmpA =  clear(contact_from_edit_page.second_home)
     tmpB = contact_from_home_page.second_home
 
-    with allure.step(f'Comparing 4 assert tmpA{tmpA} & tmpB{tmpB}'):
+    with allure.step(f'Comparing 4 assert tmpA={tmpA} & tmpB={tmpB}'):
         Flag4 = ( tmpA == tmpB )
         if Flag4 is False:
             print("Flag4: False\n")
