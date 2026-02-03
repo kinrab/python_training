@@ -1,0 +1,36 @@
+pipeline 
+
+{ agent any
+
+  stages 
+ {
+
+    stage('Clone Repository') 
+    {
+
+        steps 
+        {
+
+            git '<https://github.com/your-repo/your-project.git>'
+
+        }
+
+    }
+
+    stage('Run') 
+    {
+
+        steps 
+        {
+
+            // Example build step
+
+           sh 'echo Hello'
+
+        }
+
+    }
+
+  }
+
+}
