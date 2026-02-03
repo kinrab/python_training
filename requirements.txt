@@ -3,4 +3,4 @@ selenium
 jsonpickle
 pony
 pymysql
-mysql-connector-python
+mysql-connector-python==8.1.0
