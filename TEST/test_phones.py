@@ -38,10 +38,10 @@ def test_phones(app):
     #     print("lst[0] == ")
     #     print(contact_from_home_page)
 
-    with allure.step('Comparing 1 assert'):
-        tmp1 = clear(contact_from_edit_page.home_phone)
-        tmp2 = clear(contact_from_home_page.home_phone)
+    tmp1 = clear(contact_from_edit_page.home_phone)
+    tmp2 = clear(contact_from_home_page.home_phone)
 
+    with allure.step('Comparing 1 assert tmp1{tmp1} & tmp2{tmp2} '):
         Flag1 = ( tmp1 == tmp2 )
         if Flag1 is False:
             print("Flag1: False\n")
