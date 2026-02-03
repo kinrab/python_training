@@ -38,44 +38,44 @@ def test_phones(app):
     #     print("lst[0] == ")
     #     print(contact_from_home_page)
 
-    tmp1 = clear(contact_from_edit_page.home_phone)
-    tmp2 = clear(contact_from_home_page.home_phone)
+    tmpA = clear(contact_from_edit_page.home_phone)
+    tmpB = clear(contact_from_home_page.home_phone)
 
-    with allure.step(f'Comparing 1 assert tmp1{tmp1} & tmp2{tmp2}'):
-        Flag1 = ( tmp1 == tmp2 )
+    with allure.step(f'Comparing 1 assert tmpA{tmpA} & tmpB{tmpB}'):
+        Flag1 = ( tmpA == tmpB )
         if Flag1 is False:
             print("Flag1: False\n")
             print(contact_from_home_page)
             print(contact_from_edit_page)
         assert Flag1
 
-    tmp1 = clear(contact_from_edit_page.work_phone)
-    tmp2 = clear(contact_from_home_page.work_phone)
+    tmpA = clear(contact_from_edit_page.work_phone)
+    tmpB = clear(contact_from_home_page.work_phone)
 
-    with allure.step(f'Comparing 2 assert tmp1{tmp1} & tmp2{tmp2}'):
-        Flag2 = (tmp1 == tmp2 )
+    with allure.step(f'Comparing 2 assert tmpA={tmpA} & tmpB{tmpB}'):
+        Flag2 = (tmpA == tmpB )
         if Flag2 is False:
             print("Flag2: False\n")
             print(contact_from_home_page)
             print(contact_from_edit_page)
         assert Flag2
 
-    tmp1 = clear(contact_from_edit_page.mobile_phone)
-    tmp2 = clear(contact_from_home_page.mobile_phone)
+    tmpA = clear(contact_from_edit_page.mobile_phone)
+    tmpB = clear(contact_from_home_page.mobile_phone)
 
-    with allure.step(f'Comparing 3 assert tmp1{tmp1} & tmp2{tmp2}'):
-        Flag3 = ( tmp1 ==  tmp2 )
+    with allure.step(f'Comparing 3 assert tmpA={tmpA} & tmpB={tmpB}'):
+        Flag3 = ( tmpA ==  tmpB )
         if Flag3 is False:
             print("Flag3: False\n")
             print(contact_from_home_page)
             print(contact_from_edit_page)
         assert Flag3
 
-    tmp1 =  clear(contact_from_edit_page.second_home)
-    tmp2 = contact_from_home_page.second_home
+    tmpA =  clear(contact_from_edit_page.second_home)
+    tmpB = contact_from_home_page.second_home
 
-    with allure.step(f'Comparing 4 assert tmp1{tmp1} & tmp2{tmp2}'):
-        Flag4 = ( tmp1 == tmp2 )
+    with allure.step(f'Comparing 4 assert tmpA{tmpA} & tmpB{tmpB}'):
+        Flag4 = ( tmpA == tmpB )
         if Flag4 is False:
             print("Flag4: False\n")
             print(contact_from_home_page)
