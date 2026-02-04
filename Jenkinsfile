@@ -9,11 +9,10 @@ pipeline {
             }
         }
 
-        stage('Install dependencies') {
+        stage('XCOPY') {
             steps {
                 bat '''
-                python -m venv venv
-                call venv\\Scripts\\activate && pip install --upgrade pip && pip install -r requirements.txt
+                xcopy  D:\\REPO_PYTHON\\Python_Training\\.venv C:\\Users\\Никита\\.jenkins\\workspace\\NewTestRun /E /I /H /Y
                 '''
             }
         }
