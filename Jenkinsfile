@@ -19,7 +19,7 @@ pipeline
         {  
            bat '''        
                 python -m venv venv  
-                \venv\Scripts\activate
+                \\venv\\Scripts\\activate
                 pip install --upgrade pip
                 pip install -r requirements.txt 
                '''        
@@ -32,7 +32,7 @@ pipeline
 
         steps 
         {
-            bat 'py.test TEST\test.phones.py'
+            bat 'py.test TEST\\test.phones.py'
         }
 
     }
