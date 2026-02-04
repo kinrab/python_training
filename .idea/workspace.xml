@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d29702c-f3c0-4bdc-92df-cf18f9d957e4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/TEST/test_phones.py" beforeDir="false" afterPath="$PROJECT_DIR$/TEST/test_phones.py" afterDir="false" />
-    </list>
+    <list default="true" id="3d29702c-f3c0-4bdc-92df-cf18f9d957e4" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -346,10 +344,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.pytest in TEST" />
-      <item itemvalue="Python tests.pytest in test_add_contact.py" />
       <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
       <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
+      <item itemvalue="Python tests.pytest in TEST" />
+      <item itemvalue="Python tests.pytest in test_add_contact.py" />
       <item itemvalue="Python tests.pytest in test_phones.py" />
     </list>
     <recent_temporary>

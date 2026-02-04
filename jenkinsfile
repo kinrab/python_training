@@ -2,47 +2,40 @@ pipeline
 
 { agent any
 
-  stages 
- {
-
+ 
     stage('Clone Repository') 
     {
-
-        steps 
-        {
-
-            git '<https://github.com/your-repo/your-project.git>'
-
-        }
-
+      steps 
+      {
+              git branch: 'main', 
+              url: 'https://github.com/Hritikraj8804/devops-python-app.git'
+      }
     }
 
-    stage('Preparation') 
+    stage('Create Virttual Environment and install libraries') 
     {
 
         steps 
-        {          
-           bat 'python -m venv venv'  
-           bat '.venv\Scripts\activate'
-           pip install -r requirements.txt
-          
+        {  
+           bat '''        
+                python -m venv venv  
+                .\venv\Scripts\activate
+                pip install --upgrade pip
+                pip install -r requirements.txt          
         }
 
-    }
+     }
 
     stage('Run tests') 
     {
 
         steps 
         {
-
-            // Exammple
-
-           bat 'pytest TEST\test.phones.py'
+            bat 'py.test TEST\test.phones.py'
         }
 
     }
 
-  }
+ }
 
-}
+
