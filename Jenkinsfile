@@ -1,42 +1,28 @@
-pipeline 
+pipeline {
+    agent any
 
-{ agent any
-
- 
-    stage('Clone Repository') 
-    {
-      steps 
-      {
-              git branch: 'main', 
-              url: 'https://github.com/kinrab/python_training.git'
-      }
-    }
-
-    stage('Create Virtual Environment and install libraries') 
-    {
-
-        steps 
-        {  
-           bat '''        
-                python -m venv venv  
-                \\venv\\Scripts\\activate
-                pip install --upgrade pip
-                pip install -r requirements.txt 
-               '''        
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', 
+                    url: 'https://github.com/kinrab/python_training.git'
+            }
         }
 
-     }
-
-    stage('Run tests') 
-    {
-
-        steps 
-        {
-            bat 'py.test TEST\\test.phones.py'
+        stage('Install dependencies') {
+            steps {
+                bat '''
+                python -m venv venv
+                call venv\\Scripts\\activate && pip install --upgrade pip && pip install -r requirements.txt
+                '''
+            }
         }
 
+        stage('Run tests') {
+            steps {
+                // Используем call, чтобы подцепить окружение для запуска теста
+                bat 'venv\\Scripts\\activate && pytest TEST/test.phones.py'
+            }
+        }
     }
-
- }
-
-
+}
