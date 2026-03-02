@@ -4,6 +4,8 @@
 #  n 3 - число групп которые нужно сгенерировать генератору
 #  f data/groups.json - имя файла и папка в которой он находится
 
+# Как запустить генератор из командной строки чтобы он нашел import:
+#    python -m generator.gen_group
 
 from MODEL.group import Group
 import os.path
@@ -19,8 +21,8 @@ except getopt.GetoptError as Err:
     getopt.usage()
     sys.exit(2)
 
-n = 3
-f = "data/groups.json"
+n = 7
+f = "data/groups7.json" # Или f = r"data\groups7.json"
 
 for o , a in opts:
     if o == "-n":
@@ -38,6 +40,9 @@ def random_string (prefix, maxlen):
 # Вариант 1:
 test_data = [Group(group_name = "", group_header = "", group_footer = "")] +  \
                   [Group(group_name = random_string("name", 10), group_header = random_string("header", 20), group_footer = random_string("footer", 20)) for i in range(n)]
+
+
+
 
 data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 

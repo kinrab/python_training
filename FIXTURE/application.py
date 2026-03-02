@@ -38,3 +38,5 @@ class Application:
     def Destroy(self):
 
         self.driver.quit()
+
+

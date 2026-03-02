@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3d29702c-f3c0-4bdc-92df-cf18f9d957e4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATA/contact.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATA/contacts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATA/groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/DATA/groups.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATA/test10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FIXTURE/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/FIXTURE/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-result/20d5bd0c-6a49-4fb2-bc4d-d0d1854584a1-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-result/745d95f7-d0db-4b11-bbb8-763b5440b87c-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-result/d00d59b4-a87e-4485-af90-85fd7550023c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/gen_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/gen_group.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,12 +214,13 @@
     &quot;Python tests.pytest for TEST.group_runner.test_add_new_group.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_add_contact.test_add_new_contact_version_second.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_forth.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_second.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.pytest for TEST.test_add_group.test_add_new_group_version_third.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_del_group.test_del_some_group_db.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest for TEST.test_phones.test_phones.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in TEST.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_add_contact.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_add_group.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_add_group.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.pytest in test_db_matches_ui.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_del_group.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_phones.py.executor&quot;: &quot;Debug&quot;,
@@ -240,7 +250,7 @@
       <recent name="D:\REPO_PYTHON\python_training\TEST" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_phones.py">
+  <component name="RunManager" selected="Python tests.pytest in test_add_group.py">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,7 +270,29 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="pytest for TEST.test_bdd_runner.test_add_new_group" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="gen_group" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_training" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/generator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generator/gen_group.py" />
+      <option name="PARAMETERS" value="-n 7 -f data/tesdata7.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for TEST.test_add_group.test_add_new_group_version_second" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -273,7 +305,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TEST.test_bdd_runner.test_add_new_group&quot;" />
+      <option name="_new_target" value="&quot;TEST.test_add_group.test_add_new_group_version_second&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -294,24 +326,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in TEST" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="python_training" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TEST" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in test_add_contact.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_add_group.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="python_training" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -324,7 +339,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_add_contact.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TEST/test_add_group.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -346,19 +361,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
+      <item itemvalue="Python.gen_group" />
+      <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_second" />
       <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
-      <item itemvalue="Python tests.pytest in TEST" />
-      <item itemvalue="Python tests.pytest in test_add_contact.py" />
+      <item itemvalue="Python tests.pytest in test_add_group.py" />
       <item itemvalue="Python tests.pytest in test_phones.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_add_group.py" />
+        <item itemvalue="Python tests.pytest for TEST.test_add_group.test_add_new_group_version_second" />
+        <item itemvalue="Python.gen_group" />
         <item itemvalue="Python tests.pytest in test_phones.py" />
         <item itemvalue="Python tests.pytest for TEST.test_phones.test_phones" />
-        <item itemvalue="Python tests.pytest in test_add_contact.py" />
-        <item itemvalue="Python tests.pytest in TEST" />
-        <item itemvalue="Python tests.pytest for TEST.test_bdd_runner.test_add_new_group" />
       </list>
     </recent_temporary>
   </component>
@@ -439,14 +454,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FIXTURE/application.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TEST/test_phones.py</url>
           <line>8</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/TEST/test_add_group.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/conftest.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
